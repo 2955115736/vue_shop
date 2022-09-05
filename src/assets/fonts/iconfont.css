@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1662205983826') format('truetype');
+  src: url('iconfont.ttf?t=1662280537448') format('truetype');
 }
 
 .iconfont {
@@ -11,8 +11,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-dingdan:before {
+  content: "\e737";
+}
+
 .icon-mima:before {
   content: "\e665";
+}
+
+.icon-shangpin:before {
+  content: "\e689";
+}
+
+.icon-quanxian:before {
+  content: "\e618";
+}
+
+.icon-users:before {
+  content: "\e6b1";
+}
+
+.icon-shuju:before {
+  content: "\e8b9";
 }
 
 .icon-yonghuming:before {

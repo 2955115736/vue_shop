@@ -2,7 +2,7 @@
     <div class="login_container">
         <div class="login_box">
             <div class="avatar_box">
-                <img src='../assets/head.jpg'/>
+                <img src='../assets/img/head.jpg'/>
                 <h2>LOGIN</h2>
             </div>
             <el-form ref="loginFormRef" class="loginForm" :model="loginForm" :rules="loginFormRules">
@@ -69,7 +69,7 @@ export default {
 <style lang="scss" scoped>
 .login_container{
     height: 100%;
-    background: url('../assets/bg.jpg') no-repeat;
+    background: url('../assets/img/bg.jpg') no-repeat;
     background-size: 100% 100%; 
     
     display: flex;
