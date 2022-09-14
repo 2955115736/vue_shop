@@ -22,6 +22,7 @@ axios.interceptors.request.use(config => {
   return config;
 })
 Vue.prototype.$http = axios
+
 Vue.config.productionTip = false
 Vue.component('tree-table',TreeTable)
 Vue.use(VueQuillEditor)
