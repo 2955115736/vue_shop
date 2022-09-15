@@ -11,7 +11,7 @@
           <span class="el-dropdown-link">
             <img
               src="../assets/img/head.jpg"
-              style="width:60px;height60px;border-radius:50%"
+              style="width:55px;height55px;border-radius:50%"
             />
           </span>
           <el-dropdown-menu slot="dropdown">
@@ -27,13 +27,11 @@
       <!-- 侧边栏 -->
       <el-aside :width="isCollapse ? '64px' : '200px'">
         <div class="collapse">
-          <span class="hand" @click="asideCollapse"
-            ><img :src="imgUrl"
-          /></span>
+          <span class="hand" @click="asideCollapse"><img :src="imgUrl" /></span>
         </div>
         <el-menu
-          background-color="#54626F"
-          text-color="#fff"
+          background-color="#fff"
+          text-color="#54626F"
           active-text-color="#409BFF"
           unique-opened
           :collapse="isCollapse"
@@ -53,11 +51,10 @@
             </template>
             <!-- 二级菜单 -->
             <el-menu-item
-              :index="'/'+subItem.path"
+              :index="'/' + subItem.path"
               v-for="subItem in item.children"
               :key="subItem.id"
-              @click="saveNavState('/'+subItem.path)"
-              
+              @click="saveNavState('/' + subItem.path)"
             >
               <template slot="title">
                 <i class="el-icon-menu"></i>
@@ -89,14 +86,14 @@ export default {
         102: "iconfont icon-dingdan",
         145: "iconfont icon-shuju",
       },
-      activePath:'',
-      isChange:false,
-      imgUrl:require('../assets/img/left.png')
+      activePath: "",
+      isChange: false,
+      imgUrl: require("../assets/img/left.png"),
     };
   },
   created() {
     this.getMenuList();
-    this.activePath = window.sessionStorage.getItem('activePath')
+    this.activePath = window.sessionStorage.getItem("activePath");
   },
   methods: {
     logout() {
@@ -111,19 +108,19 @@ export default {
     },
     asideCollapse() {
       this.isCollapse = !this.isCollapse;
-      
-      if(!this.isChange){
+
+      if (!this.isChange) {
         this.isChange = !this.isChange;
-        this.imgUrl = require('../assets/img/right.png')
-      }else{
+        this.imgUrl = require("../assets/img/right.png");
+      } else {
         this.isChange = !this.isChange;
-        this.imgUrl = require('../assets/img/left.png')
+        this.imgUrl = require("../assets/img/left.png");
       }
     },
-    saveNavState(activePath){
-        window.sessionStorage.setItem('activePath',activePath);
-        this.activePath = activePath;
-    }
+    saveNavState(activePath) {
+      window.sessionStorage.setItem("activePath", activePath);
+      this.activePath = activePath;
+    },
   },
 };
 </script>
@@ -138,7 +135,9 @@ export default {
 .el-header {
   display: flex;
   justify-content: space-between;
-  background: #54626f;
+  background: #fff;
+  border-bottom: 2px solid #e6e3e3;
+  box-shadow:0px 15px 10px -15px #e6e3e3;
   .logo {
     display: flex;
     justify-content: center;
@@ -150,13 +149,15 @@ export default {
     span {
       font-size: 20px;
       font-weight: bold;
-      color: #fff;
+      color: #54626f;
       margin-left: 10px;
     }
   }
 }
 .el-aside {
-  background: #54626f;
+  background: #fff;
+  border-right: 1px solid #e6e3e3;
+  box-shadow: 2px 2px 5px #e6e3e3;
   .el-menu {
     border: none;
   }
@@ -177,7 +178,8 @@ export default {
 .collapse {
   text-align: center;
 }
-.hand{
-    cursor: pointer;
+.hand {
+  cursor: pointer;
 }
+
 </style>
