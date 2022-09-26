@@ -1,17 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../components/Login.vue'
-import Home from '../components/Home.vue'
-import Welcome from '../components/Welcome.vue'
-import Users from '../components/user/Users.vue'
-import Rights from '../components/power/Rights.vue'
-import Roles from '../components/power/Roles.vue'
-import Cate from '../components/goods/Cate.vue'
-import List from '../components/goods/List.vue'
-import Params from '../components/goods/Params.vue'
-import Add from '../components/goods/Add.vue'
-import Order from '../components/order/Order.vue'
-import Report from '../components/report/Report.vue'
 
 Vue.use(VueRouter)
 
@@ -22,52 +10,52 @@ const routes = [
   },
   {
     path:'/login',
-    component:Login
+    component:() => import('../components/Login.vue')
   },
   {
     path:'/home',
-    component:Home,
+    component:() => import('../components/Home.vue'),
     redirect:'/welcome',
     children:[
       {
         path:'/welcome',
-        component:Welcome
+        component:() => import('../components/Welcome.vue')
       },
       {
         path:'/users',
-        component:Users
+        component:() => import('../components/user/Users.vue')
       },
       {
         path:'/rights',
-        component:Rights
+        component:() => import('../components/power/Rights.vue')
       },
       {
         path:'/roles',
-        component:Roles
+        component:() => import('../components/power/Roles.vue')
       },
       {
         path:'/categories',
-        component:Cate
+        component:() => import('../components/goods/Cate.vue')
       },
       {
         path:'/goods',
-        component:List
+        component:() => import('../components/goods/List.vue')
       },
       {
         path:'/params',
-        component:Params
+        component:() => import('../components/goods/Params.vue')
       },
       {
         path:'/add',
-        component:Add
+        component:() => import('../components/goods/Add.vue')
       },
       {
         path:'/orders',
-        component:Order
+        component:() => import('../components/order/Order.vue')
       },
       {
         path:'/reports',
-        component:Report
+        component:() => import('../components/report/Report.vue')
       }
     ]
   }
